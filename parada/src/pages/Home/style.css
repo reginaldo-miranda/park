@@ -284,7 +284,34 @@ body {
 .delete-button img {
   width: 20px;
   height: 20px;
+
 }
+.mensagem-sucesso {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid #c3e6cb;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+  animation: fadeOut 0.5s ease-in-out 2.5s forwards;
+}
+
+/* Suaviza a saída */
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+
+
+
+
+
+
 
 
 /* Responsividade */
