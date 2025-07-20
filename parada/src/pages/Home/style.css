@@ -1,3 +1,4 @@
+/*
 .container{
    display: flex; 
   
@@ -70,11 +71,128 @@ form{
     opacity: 0.4;
 
   }
-
-  .card2{
-
-    display: block;
-    margin-left: 300px;
-    background-color: aqua;
-  }
  }
+*/ 
+
+/*-----------------------------------------------------------/*
+*/
+/*
+.container {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: 300px 300px;
+  background-color: dodgerblue;
+  padding: 10px;
+}
+
+.container > div {
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  padding: 20px;
+  font-size: 15px;
+  text-align: center;
+  height: 80px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 30px ;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #0c77da;
+  max-width: 50%;
+  width: 400px;
+  margin-bottom: 20px;
+
+  & button{
+    border-radius: 30px;
+    background-color: #6bb1eb;
+    height: 40px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+ & button:hover{
+  opacity: 0.8;
+ }
+  & input{
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    height:40px ;
+    background-color: aqua;
+    padding-left: 10px ;
+    outline: none;
+  }
+} */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Form à esquerda, cards à direita */
+  gap: 20px;
+  background-color: dodgerblue;
+  padding: 20px;
+  align-items: flex-start; /* alinha topo com topo */
+  height: 600px;
+  
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #0c77da;
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-container form input {
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  height:40px;
+  background-color: #e6f7ff;
+  padding-left: 10px;
+  outline: none;
+}
+
+.form-container form button {
+  border-radius: 30px;
+  background-color: #6bb1eb;
+  height: 40px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-container form button:hover {
+  opacity: 0.8;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 250px;
+  
+}
+
+.card {
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  padding: 20px;
+  font-size: 15px;
+  text-align: left;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
