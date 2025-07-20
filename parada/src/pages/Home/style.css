@@ -1,4 +1,4 @@
-.container{
+/*.container{
    display: flex; 
   
   flex-direction: column;
@@ -71,10 +71,246 @@ form{
 
   }
 
-  .card2{
-
-    display: block;
-    margin-left: 300px;
-    background-color: aqua;
-  }
+ 
  }
+*/
+/*
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+}
+
+/* Estilo do título 
+h1 {
+  font-size: 32px;
+  color: #333;
+  text-align: center;
+}
+
+/* Formulário centralizado 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #0c77da;
+  max-width: 50%;
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+form button {
+  border-radius: 30px;
+  background-color: #6bb1eb;
+  height: 40px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form button:hover {
+  opacity: 0.8;
+}
+
+form input {
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  height: 40px;
+  background-color: aqua;
+  padding-left: 10px;
+  outline: none;
+}
+
+/* Cards alinhados à direita 
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Alinha os cards à direita 
+  width: 100%;
+  padding-right: 50px; /* espaço da margem direita */
+
+
+/* Estilo dos cards 
+.card {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0f4374;
+  margin: 10px;
+  padding: 10px;
+  width: 400px;
+  border-radius: 10px;
+}
+
+.card p {
+  color: #fff;
+  font-weight: bold;
+}
+
+.card p span {
+  font-weight: normal;
+}
+
+.card button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.card button:hover {
+  opacity: 0.4;
+}
+
+*/
+/*-----------------------*/
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f0f2f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container geral */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+/* Área principal (form + cards lado a lado) */
+.content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Formulário */
+.form {
+  background: #8ebfea;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+
+.form h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form input {
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding-left: 12px;
+  margin-bottom: 16px;
+  width: 100%;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.form button {
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background: #0c77da;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+}
+
+.form button:hover {
+  background: #0958a3;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.card {
+  background: #deebf6;
+  border-left: 6px solid #0d3154;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  height: 70px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+.card-info p {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+.card-info strong {
+  color: #02080e;
+}
+
+.card button:hover {
+  opacity: 0.5;
+}
+.delete-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-button img {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .form,
+  .card {
+    width: 100%;
+    max-width: 90vw;
+  }
+
+  .cards {
+    align-items: center;
+  }
+
+  .delete-button {
+    top: 10px;
+    right: 10px;
+  }
+
+  .form h1 {
+    font-size: 20px;
+  }
+}

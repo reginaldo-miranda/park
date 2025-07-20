@@ -22,10 +22,14 @@ function Home() {
 
   async function createUser() {
     await api.post("/veiculos", {
-      placa: inputPlaca.current.value,
-      marca: inputMarca.current.value,
-      cor: inputCor.current.value
+      placa: inputPlaca.current.value.toUpperCase(),
+      marca: inputMarca.current.value.toUpperCase(),
+      cor: inputCor.current.value.toUpperCase()
+    
     });
+        inputPlaca.current.value = "";
+        inputMarca.current.value = "";
+       inputCor.current.value = "";
     getUsers();
   }
 
@@ -42,36 +46,34 @@ function Home() {
 
   return (
     <div className="container">
-      <form>
-        <h1>Cadastro de Veiculos</h1>
-        <input name="placa" type="text" placeholder="placa" ref={inputPlaca} />
-        <input name="marca" type="text" placeholder="marca" ref={inputMarca} />
-        <input name="cor" type="text" placeholder="cor" ref={inputCor} />
-        <button type="button" onClick={createUser}>
-          Cadastrar
-        </button>
-      </form>
-     
+  <div className="content">
+    <form className="form">
+      <h1>Cadastro de Veículos</h1>
+      <input name="placa" type="text" placeholder="Placa" ref={inputPlaca} />
+      <input name="marca" type="text" placeholder="Marca" ref={inputMarca} />
+      <input name="cor" type="text" placeholder="Cor" ref={inputCor} />
+      <button type="button" onClick={createUser}>
+        Cadastrar
+      </button>
+    </form>
+
+    <div className="cards">
       {carro.map((veiculos) => (
         <div key={veiculos.id} className="card">
-          <div>
-            <p>
-              Placas : <span>{veiculos.placa}</span>
-            </p>
-            <p>
-              Marca : <span>{veiculos.marca}</span>
-            </p>
-            <p>
-              Cor :<span>{veiculos.cor}</span>
-            </p>
+          <div className="card-info">
+            <p><strong>Placa:</strong> {veiculos.placa}</p>
+            <p><strong>Marca:</strong> {veiculos.marca}</p>
+            <p><strong>Cor:</strong> {veiculos.cor}</p>
           </div>
-          <button onClick={() => deleteUser(veiculos.id)}>
-            <img src={Lixeira} />
+          <button onClick={() => deleteUser(veiculos.id)} className="delete-button">
+            <img src={Lixeira} alt="Excluir" />
           </button>
         </div>
-        
       ))}
-      </div>
+    </div>
+  </div>
+</div>
+
     
   );
 }
