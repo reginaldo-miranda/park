@@ -16,12 +16,12 @@ function Home() {
   ]);*/
 
   async function getUsers() {
-    const userFromApi = await api.get("/Veiculos");
+    const userFromApi = await api.get("/veiculos");
     setCarro(userFromApi.data);
   }
 
   async function createUser() {
-    await api.post("/Veiculos", {
+    await api.post("/veiculos", {
       placa: inputPlaca.current.value,
       marca: inputMarca.current.value,
       cor: inputCor.current.value
@@ -30,7 +30,7 @@ function Home() {
   }
 
   async function deleteUser(id) {
-    await api.delete(`/Veiculos/${id}`);
+    await api.delete(`/veiculos/${id}`);
     getUsers(); // Atualiza a lista após a exclusão
   }
 
@@ -52,20 +52,20 @@ function Home() {
         </button>
       </form>
      
-      {carro.map((Veiculos) => (
-        <div key={Veiculos.id} className="card">
+      {carro.map((veiculos) => (
+        <div key={veiculos.id} className="card">
           <div>
             <p>
-              Placas : <span>{Veiculos.placa}</span>
+              Placas : <span>{veiculos.placa}</span>
             </p>
             <p>
-              Marca : <span>{Veiculos.marca}</span>
+              Marca : <span>{veiculos.marca}</span>
             </p>
             <p>
-              Cor :<span>{Veiculos.cor}</span>
+              Cor :<span>{veiculos.cor}</span>
             </p>
           </div>
-          <button onClick={() => deleteUser(Veiculos.id)}>
+          <button onClick={() => deleteUser(veiculos.id)}>
             <img src={Lixeira} />
           </button>
         </div>

@@ -75,7 +75,7 @@ app.delete("/usuarios/:id", async (req, res) => {
 
 //-------------------------- veiculos -----------------------------
 
-app.post("/Veiculos", async (req, res) => {
+app.post("/veiculos", async (req, res) => {
   await prisma.veiculos.create({
     data: {
       placa: req.body.placa,
@@ -86,7 +86,7 @@ app.post("/Veiculos", async (req, res) => {
   res.status(201).json(req.body);
 });
 
-app.get("/Veiculos", async (req, res) => {
+app.get("/veiculos", async (req, res) => {
   // lista todos
 
   let users = [];
@@ -107,7 +107,7 @@ app.get("/Veiculos", async (req, res) => {
   res.status(200).json(users);
 });
 
-app.put("/Veiculos/:id", async (req, res) => {
+app.put("/veiculos/:id", async (req, res) => {
   // editar um registro
 
   await prisma.veiculos.update({
@@ -125,7 +125,7 @@ app.put("/Veiculos/:id", async (req, res) => {
   res.status(201).json(req.body);
 });
 
-app.delete("/Veiculos/:id", async (req, res) => {
+app.delete("/veiculos/:id", async (req, res) => {
   // deletar um registro
   await prisma.veiculos.delete({
     where: {
